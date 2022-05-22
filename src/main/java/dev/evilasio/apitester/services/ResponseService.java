@@ -11,16 +11,11 @@ public class ResponseService {
 
     public Mono<Object> objResponse(Long delay, Object obj) {
 
-        Mono<Object> objMono = Mono.justOrEmpty(obj).delaySubscription(Duration.ofSeconds(delay));
-
-        return objMono;
+        return Mono.justOrEmpty(obj).delaySubscription(Duration.ofSeconds(delay));
     }
 
     public Mono<String> stringResponse(Long delay, String text) {
 
-        Mono<String> monoString = Mono.justOrEmpty(text).delaySubscription(Duration.ofSeconds(delay));
-
-        return monoString;
+        return Mono.justOrEmpty(text).delaySubscription(Duration.ofSeconds(delay));
     }
-
 }
